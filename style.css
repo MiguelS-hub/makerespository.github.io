@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-image: url("https://images.pexels.com/photos/1287142/pexels-photo-1287142.jpeg?cs=srgb&dl=purple-sky-1287142.jpg&fm=jpg");
 }
 
 textarea{
@@ -19,8 +20,15 @@ textarea{
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+ /* background-image: url("https://images6.alphacoders.com/702/702887.png")*/
 }
-
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+}
 .description{
   white-space: pre-wrap;
 }
@@ -56,16 +64,12 @@ textarea{
   background-color: #77dd77;
   color: white;
 }
+.timer{
+  position: relative;
+ margin-left: 950px;
 
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
-  color: white;
+
+
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
-}
+
