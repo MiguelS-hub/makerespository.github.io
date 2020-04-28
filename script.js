@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  var hour;
+  
+  var hour = moment().hour();
   var updatetime = setInterval(function () {
     var today = moment().format('MMMM Do YYYY, h:mm:ss a');
     hour = moment().hour();
@@ -7,8 +8,8 @@ $(document).ready(function () {
     timevalidation();
     localStorageclear();
 
-  },1000)
-  
+  },100000)
+   timevalidation();
   
   $(".save-btn").on("click", function () {
     var text = $(this).siblings(".text").val();
@@ -16,7 +17,7 @@ $(document).ready(function () {
     localStorage.setItem(time, text);
     console.log(localStorage);
   console.log(hour, time);
-timevalidation();
+//timevalidation();
 
   })
 
