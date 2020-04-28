@@ -1,22 +1,22 @@
 $(document).ready(function () {
-  
+  localStorageclear();
   var hour = moment().hour();
   var updatetime = setInterval(function () {
     var today = moment().format('MMMM Do YYYY, h:mm:ss a');
     hour = moment().hour();
     $("#Time").text(today);
     timevalidation();
-    localStorageclear();
+    
 
-  },100000)
+  },1000)
    timevalidation();
   
   $(".save-btn").on("click", function () {
     var text = $(this).siblings(".text").val();
    var time = parseInt($(this).parent().attr("id"));
     localStorage.setItem(time, text);
-    console.log(localStorage);
-  console.log(hour, time);
+    console.log(localStorage, text);
+  //console.log(hour, time);
 //timevalidation();
 
   })
@@ -53,26 +53,27 @@ $(document).ready(function () {
 
   }
  function localStorageclear() {
-   if(hour ==8 && hour==5 ){
+  
+   if(hour ==9 && hour==17 ){
      
    
-  $("#9am .text").val(localStorage.getItem("9am"));
+  $("#9 .text").val(localStorage.getItem("9"));
 
-  $("#10am .text").val(localStorage.getItem("10am"));
+  $("#10 .text").val(localStorage.getItem("10"));
 
-  $("#11am .text").val(localStorage.getItem("11am"));
+  $("#11 .text").val(localStorage.getItem("11"));
 
-  $("#12pm .text").val(localStorage.getItem("12pm"));
+  $("#12 .text").val(localStorage.getItem("12"));
 
-  $("#1pm .text").val(localStorage.getItem("1pm"));
+  $("#13 .text").val(localStorage.getItem("13"));
 
-  $("#2pm .text").val(localStorage.getItem("2pm"));
+  $("#14 .text").val(localStorage.getItem("14"));
 
-  $("#3pm .text").val(localStorage.getItem("3pm"));
+  $("#15 .text").val(localStorage.getItem("15"));
 
-  $("#4pm .text").val(localStorage.getItem("4pm"));
+  $("#16 .text").val(localStorage.getItem("16"));
 
-  $("#5pm .text").val(localStorage.getItem("5pm"));
+  $("#17 .text").val(localStorage.getItem("17"));
    }
    else{
     localStorage.clear();
