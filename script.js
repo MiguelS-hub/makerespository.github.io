@@ -7,30 +7,45 @@ $(document).ready(function () {
     timevalidation();
     localStorageclear();
 
-  })
-  var time;
-
+  },1000)
+  
+  
   $(".save-btn").on("click", function () {
     var text = $(this).siblings(".text").val();
-    time = $(this).parent().attr("id");
+   var time = parseInt($(this).parent().attr("id"));
     localStorage.setItem(time, text);
     console.log(localStorage);
+  console.log(hour, time);
+timevalidation();
 
   })
 
   function timevalidation() {
     $(".text").each(function() {
-
-      if (hour > time) {
-        $(this).addClass("past]");
-      }
-      else if (time > hour) {
-        $(this).addClass("future");
-      }
-      else {
-        $(this).removeClass("past");
-        $(this).addClass("present");
-      }
+    //console.log(this);
+   //
+   var time = parseInt($(this).parent().attr("id")); //hour=15;
+  // console.log(time);
+  // var hour=11;
+   if(time==hour){
+     $(this).addClass("present");
+   }
+   if(time<hour){
+    $(this).addClass("past");
+   }
+   if(time>hour){
+    $(this).addClass("future");
+   }
+      // if (hour > time) {
+      //   $(this).addClass("past");
+      // }
+      // else if (time > hour) {
+      //   $(this).addClass("future");
+      // }
+      // else {
+      //   $(this).removeClass("past");
+      //   $(this).addClass("present");
+      // }
 
 
     })
